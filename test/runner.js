@@ -67,6 +67,7 @@ new TestRunner({
 
   // Default connection config to use.
   config: {
+    identity: 'default',
     credential: {
       "type": "service_account",
       "project_id": "banana-b510e",
