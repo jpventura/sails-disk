@@ -42,12 +42,7 @@
   "waterlineAdapter": {
     "waterlineVersion": "^0.12.0",
     "interfaces": [
-      "semantic",
-      "queryable",
-      "associations"
-    ],
-    "features": [
-      "cross-adapter"
+      "semantic"
     ]
   }
 }
