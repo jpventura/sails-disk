@@ -67,6 +67,7 @@ new TestRunner({
 
   // Default connection config to use.
   config: {
+    autoPk: false,
     identity: 'default',
     credential: {
       "type": "service_account",
