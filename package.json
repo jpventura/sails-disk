@@ -29,7 +29,6 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "async": "2.0.1",
-    "firebase-admin": "4.0.4",
     "fs-extra": "0.30.0",
     "lodash": "3.10.1",
     "sails": "0.12.11",
@@ -38,6 +37,7 @@
     "waterline-errors": "0.10.1"
   },
   "devDependencies": {
+    "firebase-admin": "^4.0.4",
     "mocha": "3.0.2",
     "waterline-adapter-tests": "^0.12.1"
   },
