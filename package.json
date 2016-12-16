@@ -29,9 +29,9 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "async": "2.0.1",
+    "bluebird": "3.2.1",
     "fs-extra": "0.30.0",
     "lodash": "3.10.1",
-    "sails": "0.12.11",
     "waterline-criteria": "^1.0.1",
     "waterline-cursor": "^0.0.7",
     "waterline-errors": "0.10.1"
