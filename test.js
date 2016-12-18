@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 const _ = require('lodash');
-const Map = require('./lib/util/ObservableMap');
+const ObservableMap = require('./lib/util/ObservableMap');
 
 const config = {
   autoPk: false,
@@ -22,12 +22,12 @@ const config = {
 
 const application = admin.initializeApp(config, 'default');
 
-const schemas = new Map(application.database().ref('schemas'));
+const schemas = new ObservableMap(application.database().ref('schemas'));
 
-schemas.put('1', '1341234').then((data) => console.log('>>> ' + data), (error) => {console.error(error)});
-
-
-schemas.subscribe(function (identity, key, event, oldValue) {
-  console.log('callback');
-  console.log(`[${identity}] ${event}: ${oldValue} -> ${schemas[key]}`);
-});
+schemas.insertAt('1', '1341234').then((data) => console.log('>>> ' + data), (error) => {console.error(error)});
+//
+//
+// schemas.subscribe(function (identity, key, event, oldValue) {
+//   console.log('callback');
+//   console.log(`[${identity}] ${event}: ${oldValue} -> ${schemas[key]}`);
+// });
