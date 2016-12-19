@@ -20,14 +20,33 @@ const config = {
   databaseURL: 'https://banana-b510e.firebaseio.com'
 };
 
-const application = admin.initializeApp(config, 'default');
+// const application = admin.initializeApp(config, 'default');
 
-const schemas = new Map(application.database().ref('schemas'));
+// const schemas = new Map(application.database().ref('schemas'));
 
-schemas.put('1', '1341234').then((data) => console.log('>>> ' + data), (error) => {console.error(error)});
+// schemas.put('1', '1341234').then((data) => console.log('>>> ' + data), (error) => {console.error(error)});
 
 
-schemas.subscribe(function (identity, key, event, oldValue) {
-  console.log('callback');
-  console.log(`[${identity}] ${event}: ${oldValue} -> ${schemas[key]}`);
-});
+// schemas.subscribe(function (identity, key, event, oldValue) {
+//   console.log('callback');
+//   console.log(`[${identity}] ${event}: ${oldValue} -> ${schemas[key]}`);
+// });
+
+const method = function(number) {
+    return number*number;
+};
+
+Promise.resolve(10)
+    .then(function(number) {
+	console.log(this);
+	if (this.method) {
+	    console.log('entrei');
+	    return this.method(number);
+	}
+
+	return number;
+    }.bind({ method }))
+    .then((number) => {
+	console.log(number);
+    });
+
